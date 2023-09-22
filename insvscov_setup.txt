@@ -1,0 +1,18 @@
+export INVSCOV_CXX="clang++-10"
+export INVSCOV_CC="clang-10"
+
+mkdir home/shubham/invscov/bison-3.8/invscov_output
+export INVSCOV_OUTPUT_PATH=home/shubham/invscov/bison-3.8/invscov_output/
+
+cd bison-3.8/
+./configure prefix=/home/shubham/invscov/bison-3.8/install 
+make CC=/home/shubham/invscov/InvsCov/dump-cc CXX=/home/shubham/invscov/InvsCov/dump-c++
+cp /home/shubham/invscov/bison-3.8/src/bison /home/shubham/invscov/bison-3.8/src/bison_dump 
+# assuming that 'program' is the result of the compilation
+
+
+/home/shubham/invscov/InvsCov/reconstruct-dump
+
+/home/shubham/invscov/InvsCov/learn-invariants /home/shubham/invscov/testcases/bison/ /home/shubham/invscov/bison-3.8/src/bison_dump @@
+
+/home/shubham/invscov/InvsCov/generate-constraints
