@@ -14,4 +14,6 @@ sudo ln -s /opt/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clang /bin/c
 
 sudo ln -s /opt/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clang++ /bin/clang++-10    
 
+sudo ln -s /opt/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/llvm-config /bin/llvm-config-10 
+
 sudo apt install libncurses5
